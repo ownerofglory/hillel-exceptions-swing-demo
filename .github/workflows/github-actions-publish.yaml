@@ -32,7 +32,14 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
+
       - name: Publish to GitHub Packages
         run: mvn --batch-mode deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish JAR
+        uses: actions/upload-artifact@v2
+        with:
+          name: hillel-currency-app
+          path: target/hillel-exception-demo-1.0-SNAPSHOT.jar
