@@ -1,4 +1,4 @@
-name: Hillel Currency App build pipeline
+name: Hillel Currency App publish pipeline
 on:
   push:
     branches:
