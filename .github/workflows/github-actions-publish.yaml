@@ -35,11 +35,8 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Publish to GitHub Packages
-        run: mvn --batch-mode deploy
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+      - name: Build App
+        run: mvn --batch-mode build
       - name: Publish JAR
         uses: actions/upload-artifact@v2
         with:
