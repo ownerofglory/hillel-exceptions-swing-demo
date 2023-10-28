@@ -36,7 +36,7 @@ jobs:
           cache: maven
 
       - name: Build App
-        run: mvn --batch-mode build
+        run: mvn --batch-mode package
       - name: Publish JAR
         uses: actions/upload-artifact@v2
         with:
