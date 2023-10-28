@@ -1,4 +1,4 @@
-name: Hillel Currency App build pipeline
+name: Hillel Currency App publish pipeline
 on:
   push:
     branches:
@@ -28,6 +28,8 @@ jobs:
     steps:
       - name: Set up Java for publishing to GitHub Packages
         uses: actions/checkout@v4
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
         with:
           java-version: '17'
           distribution: 'temurin'
